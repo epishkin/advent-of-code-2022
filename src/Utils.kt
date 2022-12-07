@@ -8,6 +8,13 @@ import java.security.MessageDigest
 fun readInput(name: String) = File("src", "$name.txt")
     .readLines()
 
+fun readInputAsInts(name: String) = readInput(name)
+    .map { it.toInt() }
+
+fun assertEquals(actual: Any, expected: Any) {
+    if (actual != expected) error("Expected $expected but got $actual")
+}
+
 /**
  * Converts string to md5 hash.
  */
